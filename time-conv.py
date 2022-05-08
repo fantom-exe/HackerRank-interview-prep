@@ -1,4 +1,3 @@
-
 import math
 import os
 import random
@@ -14,17 +13,22 @@ import sys
 
 def timeConversion(s):
     # Write your code here
+    hour = s[:2]
+    am_pm = s[8:]
 
 
 
 
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    s = input()
+timeConversion('12:01:00AM')
 
-    result = timeConversion(s)
-
-    fptr.write(result + '\n')
-
-    fptr.close()
+# if __name__ == '__main__':
+#     fptr = open(os.environ['OUTPUT_PATH'], 'w')
+#
+#     s = input()
+#
+#     result = timeConversion(s)
+#
+#     fptr.write(result + '\n')
+#
+#     fptr.close()
