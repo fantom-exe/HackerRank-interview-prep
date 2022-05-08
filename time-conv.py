@@ -16,11 +16,24 @@ def timeConversion(s):
     hour = s[:2]
     am_pm = s[8:]
 
+    if am_pm == 'AM':  # am
+        if hour == '12':  # 12 am
+            time = '00'+s[2:8]
+        else:
+            time = s[:8]
+    else:  # pm
+        if hour == '12':  # 12 pm
+            time = hour+s[2:8]
+        else:
+            hour = int(hour) + 12
+            time = str(hour)+s[2:8]
 
-
+    print(time)
+    return time
 
 
 timeConversion('12:01:00AM')
+timeConversion('07:05:45PM')
 
 # if __name__ == '__main__':
 #     fptr = open(os.environ['OUTPUT_PATH'], 'w')
