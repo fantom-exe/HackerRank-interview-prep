@@ -1,4 +1,3 @@
-
 #
 # The function is expected to return an INTEGER.
 # The function accepts following parameters:
@@ -8,11 +7,9 @@
 #
 
 def divisibleSumPairs(n, k, ar):
-    # Write your code here
 
 
     return n
-
 
 
 ar = [1, 2, 3, 4, 5, 6]
