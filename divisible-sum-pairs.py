@@ -1,5 +1,3 @@
-
-
 def divisibleSumPairs(n, k, ar):
     pairs = 0
 
@@ -7,7 +5,6 @@ def divisibleSumPairs(n, k, ar):
         for j in range(i+1, n):
             num = ar[i] + ar[j]
 
-            # print(ar[i], '+', ar[j], '=', num)
             if num % k == 0:
                 print('Pair: ', ar[i], '+', ar[j], '=', num)
                 pairs += 1
