@@ -7,14 +7,20 @@
 #         case 'V':
 
 
-def spliter(op, text):
+def splitter(op, text):
+    text_list = []
     match op:
-        case 'M':
-            print(text)
+        case 'M' | 'V':
+            for i in range(1, len(text)):
+                char = text[i]
+                if char.isupper():
+                    text_list = text[:i]
+                elif not char.isalpha():
+                    break
         # case 'C':
         #
-        # case 'V':
 
+    print(text_list)
 
 
 def camel_case(text_in):
@@ -25,8 +31,8 @@ def camel_case(text_in):
 
     match op1:
         case 'S':
-            spliter(op2, text)
-        case 'C':
+            splitter(op2, text)
+        # case 'C':
             # combiner(op2, text)
 
 
