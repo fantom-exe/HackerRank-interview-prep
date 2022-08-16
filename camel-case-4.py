@@ -31,7 +31,6 @@ def splitter(type, txt):
                     output += txt[split:i].lower()
                     break
 
-
     return output
 
 
@@ -68,7 +67,6 @@ def combiner(type, txt):
                     output += txt[split:i].lower()
                     break
 
-
     return output
 
 
@@ -82,9 +80,14 @@ def camel_case(txt_in):
         case 'S':
             return splitter(type, txt)
         case 'C':
-            combiner(type, txt)
+            return combiner(type, txt)
 
 
 
 txt_in = 'S;M;plasticCup()'
 print(camel_case(txt_in))
+txt_in = 'S;C;LargeSoftwareBook'
+print(camel_case(txt_in))
+txt_in = 'S;V;pictureFrame'
+print(camel_case(txt_in))
+
