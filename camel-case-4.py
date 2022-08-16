@@ -13,7 +13,6 @@ def splitter(type, txt):
                 elif not char.isalpha():
                     output += txt[split:i]
                     break
-
         case 'C' | 'V':
             for i in range(2, txt_len):
                 char = txt[i]
@@ -22,7 +21,6 @@ def splitter(type, txt):
                     split = i
                 elif i == txt_len - 1:
                     output += txt[split:txt_len]
-
 
     print(output.lower())
 
@@ -77,7 +75,6 @@ def camel_case(txt_in):
             combiner(type, txt)
 
 
-
 txt_in = 'S;M;plasticCup()'
 camel_case(txt_in)
 txt_in = 'S;C;LargeSoftwareBook'
@@ -90,4 +87,3 @@ txt_in = 'C;C;coffee machine'
 camel_case(txt_in)
 txt_in = 'C;M;white sheet of paper'
 camel_case(txt_in)
-
