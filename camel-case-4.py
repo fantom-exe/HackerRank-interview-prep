@@ -64,15 +64,15 @@ def camel_case(txt_in):
             combiner(type, txt)
 
 
-# txt_in = 'S;M;plasticCup()'
-# camel_case(txt_in)
-# txt_in = 'S;C;LargeSoftwareBook'
-# camel_case(txt_in)
-# txt_in = 'S;V;pictureFrame'
-# camel_case(txt_in)
-txt_in = 'C;M;white sheet of paper'
+txt_in = 'S;M;plasticCup()'
+camel_case(txt_in)
+txt_in = 'C;V;mobile phone'
 camel_case(txt_in)
 txt_in = 'C;C;coffee machine'
 camel_case(txt_in)
-txt_in = 'C;V;mobile phone'
+txt_in = 'S;C;LargeSoftwareBook'
+camel_case(txt_in)
+txt_in = 'C;M;white sheet of paper'
+camel_case(txt_in)
+txt_in = 'S;V;pictureFrame'
 camel_case(txt_in)
