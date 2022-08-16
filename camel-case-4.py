@@ -26,22 +26,19 @@ def splitter(type, txt):
 
 
 def combiner(type, txt):
-    txt_len = len(txt)
-    split = 0
+    words = txt.split(' ')
+    num_of_words = len(words)
     output = ''
 
     match type:
         case 'M':
-            for i in range(1, txt_len):
-                char = txt[i]
-                if char.isupper():
-                    output += txt[:i] + ' '
-                    split = i
-                if not char.isalpha():
-                    output += txt[split:i]
-                    break
+            output += words[0]
+            for i in range(1, num_of_words):
+                output += words[i][0].upper() + words[i][1:]
+
+            print(output + '()')
         case 'C':
-            for i in range(1, txt_len):
+            for i in range(1, num_of_words):
                 char = txt[i]
                 if char.isupper():
                     output += txt[:i] + ' '
@@ -50,7 +47,7 @@ def combiner(type, txt):
                     output += txt[split:i]
                     break
         case 'V':
-            for i in range(1, txt_len):
+            for i in range(1, num_of_words):
                 char = txt[i]
                 if char.isupper():
                     output += txt[:i] + ' '
@@ -59,7 +56,6 @@ def combiner(type, txt):
                     output += txt[split:i]
                     break
 
-    print(output)
 
 
 def camel_case(txt_in):
@@ -75,15 +71,15 @@ def camel_case(txt_in):
             combiner(type, txt)
 
 
-txt_in = 'S;M;plasticCup()'
-camel_case(txt_in)
-txt_in = 'S;C;LargeSoftwareBook'
-camel_case(txt_in)
-txt_in = 'S;V;pictureFrame'
-camel_case(txt_in)
-txt_in = 'C;V;mobile phone'
+# txt_in = 'S;M;plasticCup()'
+# camel_case(txt_in)
+# txt_in = 'S;C;LargeSoftwareBook'
+# camel_case(txt_in)
+# txt_in = 'S;V;pictureFrame'
+# camel_case(txt_in)
+txt_in = 'C;M;white sheet of paper'
 camel_case(txt_in)
 txt_in = 'C;C;coffee machine'
 camel_case(txt_in)
-txt_in = 'C;M;white sheet of paper'
+txt_in = 'C;V;mobile phone'
 camel_case(txt_in)
