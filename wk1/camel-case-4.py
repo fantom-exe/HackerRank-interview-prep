@@ -1,77 +1,73 @@
-def splitter(type, txt):
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import sys
+
+
+def splitter(txt_type, txt):
     txt_len = len(txt)
     split = 0
     output = ''
 
-    match type:
-        case 'M':
-            for i in range(1, txt_len):
-                char = txt[i]
-                if char.isupper():
-                    output += txt[:i] + ' '
-                    split = i
-                elif not char.isalpha():
-                    output += txt[split:i]
-                    break
-        case 'C' | 'V':
-            for i in range(2, txt_len):
-                char = txt[i]
-                if char.isupper():
-                    output += txt[split:i] + ' '
-                    split = i
-                elif i == txt_len - 1:
-                    output += txt[split:txt_len]
+    if txt_type == 'M':
+        for i in range(1, txt_len):
+            char = txt[i]
+            if char.isupper():
+                output += txt[:i] + ' '
+                split = i
+            elif not char.isalpha():
+                output += txt[split:i]
+                break
+    elif txt_type in ['C', 'V']:
+        for i in range(1, txt_len):
+            char = txt[i]
+            if char.isupper():
+                output += txt[split:i] + ' '
+                split = i
+            elif i == txt_len - 1:
+                output += txt[split:txt_len]
 
     print(output.lower())
 
 
-def combiner(type, txt):
+def combiner(txt_type, txt):
     words = txt.split(' ')
     num_of_words = len(words)
     output = ''
 
-    match type:
-        case 'M':
-            output += words[0]
-            for i in range(1, num_of_words):
-                output += words[i][0].upper() + words[i][1:]
+    if txt_type == 'M':
+        output += words[0]
+        for i in range(1, num_of_words):
+            output += words[i][0].upper() + words[i][1:]
 
-            print(output + '()')
-        case 'C':
-            for i in range(0, num_of_words):
-                output += words[i][0].upper() + words[i][1:]
+        print(output + '()')
+    elif txt_type == 'C':
+        for i in range(0, num_of_words):
+            output += words[i][0].upper() + words[i][1:]
 
-            print(output)
-        case 'V':
-            output += words[0]
-            for i in range(1, num_of_words):
-                output += words[i][0].upper() + words[i][1:]
+        print(output)
+    elif txt_type == 'V':
+        output += words[0]
+        for i in range(1, num_of_words):
+            output += words[i][0].upper() + words[i][1:]
 
-            print(output)
+        print(output)
 
 
 def camel_case(txt_in):
     split_txt = txt_in.split(';')
     op = split_txt[0]
-    type = split_txt[1]
+    txt_type = split_txt[1]
     txt = split_txt[2]
 
-    match op:
-        case 'S':
-            splitter(type, txt)
-        case 'C':
-            combiner(type, txt)
+    if op == 'S':
+        splitter(txt_type, txt)
+    elif op == 'C':
+        combiner(txt_type, txt)
 
 
-txt_in = 'S;M;plasticCup()'
-camel_case(txt_in)
-txt_in = 'C;V;mobile phone'
-camel_case(txt_in)
-txt_in = 'C;C;coffee machine'
-camel_case(txt_in)
-txt_in = 'S;C;LargeSoftwareBook'
-camel_case(txt_in)
-txt_in = 'C;M;white sheet of paper'
-camel_case(txt_in)
-txt_in = 'S;V;pictureFrame'
-camel_case(txt_in)
+if __name__ == '__main__':
+    # Read input lines and remove '\n' and '\r' characters to avoid bugs
+    inputData = [line.rstrip('\n\r') for line in sys.stdin.readlines()]
+
+    for txt_in in inputData:
+        camel_case(txt_in)
+
