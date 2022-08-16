@@ -1,33 +1,75 @@
 def splitter(type, txt):
-    text_list = []
-
-    match type:
-        case 'M' | 'V':
-            for i in range(1, len(txt)):
-                char = txt[i]
-                if char.isupper():
-                    text_list = txt[:i]
-                elif not char.isalpha():
-                    break
-        # case 'C':
-        #
-
-    print(text_list)
-
-
-def combiner(type, txt):
-    text_list = []
+    output = ''
+    split = 0
 
     match type:
         case 'M':
-
+            for i in range(1, len(txt)):
+                char = txt[i]
+                if char.isupper():
+                    output += txt[:i].lower() + ' '
+                    split = i
+                if not char.isalpha():
+                    output += txt[split:i].lower()
+                    break
         case 'C':
-
+            for i in range(1, len(txt)):
+                char = txt[i]
+                if char.isupper():
+                    output += txt[:i].lower() + ' '
+                    split = i
+                if not char.isalpha():
+                    output += txt[split:i].lower()
+                    break
         case 'V':
+            for i in range(1, len(txt)):
+                char = txt[i]
+                if char.isupper():
+                    output += txt[:i].lower() + ' '
+                    split = i
+                if not char.isalpha():
+                    output += txt[split:i].lower()
+                    break
 
 
+    return output
 
-    print(text_list)
+
+def combiner(type, txt):
+    output = ''
+    split = 0
+
+    match type:
+        case 'M':
+            for i in range(1, len(txt)):
+                char = txt[i]
+                if char.isupper():
+                    output += txt[:i].lower() + ' '
+                    split = i
+                if not char.isalpha():
+                    output += txt[split:i].lower()
+                    break
+        case 'C':
+            for i in range(1, len(txt)):
+                char = txt[i]
+                if char.isupper():
+                    output += txt[:i].lower() + ' '
+                    split = i
+                if not char.isalpha():
+                    output += txt[split:i].lower()
+                    break
+        case 'V':
+            for i in range(1, len(txt)):
+                char = txt[i]
+                if char.isupper():
+                    output += txt[:i].lower() + ' '
+                    split = i
+                if not char.isalpha():
+                    output += txt[split:i].lower()
+                    break
+
+
+    return output
 
 
 def camel_case(txt_in):
@@ -38,7 +80,7 @@ def camel_case(txt_in):
 
     match op:
         case 'S':
-            splitter(type, txt)
+            return splitter(type, txt)
         case 'C':
             combiner(type, txt)
 
