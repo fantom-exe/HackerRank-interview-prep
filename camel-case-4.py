@@ -50,7 +50,6 @@ def combiner(type, txt):
             print(output)
 
 
-
 def camel_case(txt_in):
     split_txt = txt_in.split(';')
     op = split_txt[0]
