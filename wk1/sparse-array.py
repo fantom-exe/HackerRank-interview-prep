@@ -1,24 +1,16 @@
-#!/bin/python3
-
-import math
-import os
-import random
-import re
-import sys
-
 
 def matchingStrings(strings, queries):
+    instances = [0] * len(queries)
 
-    for string in strings:
-        instances = 0
-        print(string)
+    for i in range(len(queries)):
+        query = queries[i]
 
-        for query in queries:
-            print(query)
+        for string in strings:
             if query == string:
-                instances += 1
+                instances[i] += 1
 
-        print(instances)
+    print(*instances, sep='\n')
+    return instances
 
 
 strings = ['ab', 'ab', 'abc']
