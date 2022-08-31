@@ -1,10 +1,29 @@
 #!/bin/python3
 
 
-def flippingBits(n):
-    
+def decimalToBinary(decimal):
 
-    return n
+
+    return binary
+
+
+def binaryToDecimal(binary):
+
+
+    return decimal
+
+
+def flippingBits(n):
+    # convert to binary
+    binary = decimalToBinary(n)
+
+    # flip bits
+
+
+    # convert back to decimal
+    dec_flipped = binaryToDecimal(binary)
+
+    return dec_flipped
 
 
 n = 2147483647
