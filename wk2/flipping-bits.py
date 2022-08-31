@@ -11,8 +11,6 @@ def decimalToBinary(decimal):
         binary[index] = remainder
         index -= 1
 
-        print(decimal, remainder, binary)
-
         if decimal == 0:
             break
 
@@ -20,6 +18,12 @@ def decimalToBinary(decimal):
 
 
 def binaryToDecimal(binary):
+    decimal = 0
+    multiplier = 1
+
+    for i in reversed(range(len(binary))):
+        decimal += binary[i] * multiplier
+        multiplier *= 2
 
     return decimal
 
@@ -29,8 +33,11 @@ def flippingBits(n):
     binary = decimalToBinary(n)
 
     # flip bits
-    for i in binary:
-        break
+    for i in range(len(binary)):
+        if binary[i] == 0:
+            binary[i] = 1
+        else:  # i == 1
+            binary[i] = 0
 
     # convert back to decimal
     decimal_flipped = binaryToDecimal(binary)
@@ -38,11 +45,9 @@ def flippingBits(n):
     return decimal_flipped
 
 
-n = 13
+n = 2147483647
 print(flippingBits(n))
-# n = 2147483647
-# print(flippingBits(n))
-# n = 1
-# print(flippingBits(n))
-# n = 0
-# print(flippingBits(n))
+n = 1
+print(flippingBits(n))
+n = 0
+print(flippingBits(n))
