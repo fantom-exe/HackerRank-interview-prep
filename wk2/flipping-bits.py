@@ -2,7 +2,9 @@
 
 
 def flippingBits(n):
+    
 
+    return n
 
 
 n = 2147483647
