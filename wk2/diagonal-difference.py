@@ -4,18 +4,13 @@
 def diagonalDifference(arr):
     primary_diag_sum = 0
     secondary_diag_sum = 0
+    size = len(arr)
 
-    # primary diagonal
-    for row in range(len(arr)):
+    for row in range(size):
         col = row
         primary_diag_sum += arr[row][col]
-        print(primary_diag_sum)
-
-    # secondary diagonal
-    for row in reversed(range(len(arr))):
-        col = row
+        col = size - 1 - row
         secondary_diag_sum += arr[row][col]
-        print(secondary_diag_sum)
 
     return abs(primary_diag_sum - secondary_diag_sum)
 
