@@ -4,16 +4,14 @@
 def marsExploration(s):
     errors = 0
 
-    for i in range(len(s)):
-        ch = s[i]
-        match ch:
-            case 'S':
-                print(ch)
-            case 'O':
-                print(ch)
-            case _:
-                errors += 1
-                print(ch)
+    for i in range(0, len(s), 3):
+        mssg = s[i:i+3]
+        if mssg[0] != 'S':
+            errors += 1
+        if mssg[1] != 'O':
+            errors += 1
+        if mssg[2] != 'S':
+            errors += 1
 
     return errors
 
@@ -21,4 +19,6 @@ def marsExploration(s):
 s = 'SOSSPSSQSSOR'
 print(marsExploration(s))
 s = 'SOSSOT'
+print(marsExploration(s))
+s = 'SOSOOSOSOSOSOSSOSOSOSOSOSOS'
 print(marsExploration(s))
