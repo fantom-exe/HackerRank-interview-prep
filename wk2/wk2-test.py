@@ -3,10 +3,12 @@
 
 def flippingMatrix(matrix):
     sum = 0
+    rows = len(matrix)
+    cols = len(matrix[0])
 
-    for r in range(len(matrix)):
-        for c in range(len(matrix[0])):
-            print(len(matrix[0]))
+    for r in range(rows):
+        for c in range(cols):
+            print()
 
     return sum
 
