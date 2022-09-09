@@ -4,7 +4,7 @@
 def flippingMatrix(matrix):
     sum = 0
 
-
+    for i in
 
     return sum
 
