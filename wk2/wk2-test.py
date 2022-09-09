@@ -2,13 +2,19 @@
 
 
 def flippingMatrix(matrix):
-    sum = 0
     rows = len(matrix)
     cols = len(matrix[0])
+    lg_sum = 0
 
     for r in range(rows):
+        curr_sum = 0
+
         for c in range(cols):
-            print()
+            curr_sum += matrix[r][c]
+
+        # test if current sum is greater
+        if curr_sum > lg_sum:
+            lg_sum = curr_sum
 
     return sum
 
