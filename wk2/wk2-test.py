@@ -4,7 +4,9 @@
 def flippingMatrix(matrix):
     sum = 0
 
-    for i in
+    for r in range(len(matrix)):
+        for c in range(len(matrix[0])):
+            print(len(matrix[0]))
 
     return sum
 
