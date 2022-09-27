@@ -1,23 +1,20 @@
 #!/bin/python3
 
-
+# maximize sum of submatrix at [00, 01]
+#                              [10, 11]
 def flippingMatrix(matrix):
+    # size of matrix
     rows = len(matrix)
-    cols = len(matrix[0])
-    matrix_reversed = []
-    lg_sum = 0
+    cols = rows
+    # size of submatrix
+    len_submtrx = rows // 2
 
     for r in range(rows):
-        curr_sum = 0
 
         for c in range(cols):
             curr_sum += matrix[r][c]
 
-            # test if current sum is greater
-            if curr_sum > lg_sum:
-                lg_sum = curr_sum
-
-    return lg_sum
+    return curr_sum
 
 
 matrix = [[112, 42, 83, 119],
